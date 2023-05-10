@@ -1,5 +1,6 @@
 package com.example.myapplication.userInterface.fragment.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -10,6 +11,7 @@ class ImageAdapter(private val onClick: (position: Int) -> Unit) :
     RecyclerView.Adapter<ImageAdapter.ViewHolder>() {
     private val list = mutableListOf<Int>()
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setList(imageList: List<Int>) {
         list.clear()
         list.addAll(imageList)

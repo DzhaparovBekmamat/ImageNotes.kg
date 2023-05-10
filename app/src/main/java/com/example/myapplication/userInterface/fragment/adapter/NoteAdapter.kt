@@ -1,5 +1,6 @@
 package com.example.myapplication.userInterface.fragment.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -9,6 +10,7 @@ import com.example.myapplication.databinding.NoteListBinding
 class NoteAdapter(private val click: Result) : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
     private val list = mutableListOf<NoteModel>()
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setNote(noteList: List<NoteModel>) {
         list.clear()
         list.addAll(noteList)

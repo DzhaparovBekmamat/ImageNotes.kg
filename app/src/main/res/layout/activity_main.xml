@@ -4,6 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
+=======
+    android:background="#F5F5DC"
+>>>>>>> b905f7c (Initial commit)
     tools:context=".userInterface.fragment.activity.MainActivity">
 
     <androidx.fragment.app.FragmentContainerView

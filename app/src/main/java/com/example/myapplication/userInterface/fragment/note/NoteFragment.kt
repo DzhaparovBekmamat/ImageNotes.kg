@@ -1,6 +1,8 @@
 package com.example.myapplication.userInterface.fragment.note
 
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
+import com.example.myapplication.R
 import com.example.myapplication.dataBase.app.App
 import com.example.myapplication.base.BaseFragment
 import com.example.myapplication.data.model.NoteModel
@@ -15,6 +17,9 @@ class NoteFragment : BaseFragment<FragmentNoteBinding>(FragmentNoteBinding::infl
     override fun setUpUI() {
         setupRecyclerView()
         loadNotes()
+        binding.buttonFragmentNote.setOnClickListener {
+            findNavController().navigate(R.id.addNoteFragment)
+        }
     }
 
     override fun onLongClick(noteModel: NoteModel) {
