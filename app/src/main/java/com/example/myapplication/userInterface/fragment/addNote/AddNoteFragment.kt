@@ -1,12 +1,12 @@
 package com.example.myapplication.userInterface.fragment.addNote
 
 import androidx.navigation.fragment.findNavController
-import com.example.myapplication.dataBase.app.App
 import com.example.myapplication.R
 import com.example.myapplication.base.BaseFragment
 import com.example.myapplication.data.model.NoteModel
 import com.example.myapplication.databinding.FragmentAddNoteBinding
 import com.example.myapplication.userInterface.fragment.adapter.ImageAdapter
+import com.example.myapplication.userInterface.sharedPreferences.app.Application
 
 class AddNoteFragment : BaseFragment<FragmentAddNoteBinding>(FragmentAddNoteBinding::inflate) {
     private val adapter: ImageAdapter by lazy { ImageAdapter(this::onClick) }
@@ -23,7 +23,7 @@ class AddNoteFragment : BaseFragment<FragmentAddNoteBinding>(FragmentAddNoteBind
 
     private fun onClick(position: Int) {
         val noteModel = NoteModel(image = position)
-        App.database.getDao().setNote(noteModel)
+        Application.database.getDao().setNote(noteModel)
     }
 
     override fun setUpObserver() {

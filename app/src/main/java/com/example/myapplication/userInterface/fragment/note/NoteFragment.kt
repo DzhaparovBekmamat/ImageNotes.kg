@@ -3,11 +3,11 @@ package com.example.myapplication.userInterface.fragment.note
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.myapplication.R
-import com.example.myapplication.dataBase.app.App
 import com.example.myapplication.base.BaseFragment
 import com.example.myapplication.data.model.NoteModel
 import com.example.myapplication.databinding.FragmentNoteBinding
 import com.example.myapplication.userInterface.fragment.adapter.NoteAdapter
+import com.example.myapplication.userInterface.sharedPreferences.app.Application
 
 class NoteFragment : BaseFragment<FragmentNoteBinding>(FragmentNoteBinding::inflate),
     NoteAdapter.Result {
@@ -23,8 +23,8 @@ class NoteFragment : BaseFragment<FragmentNoteBinding>(FragmentNoteBinding::infl
     }
 
     override fun onLongClick(noteModel: NoteModel) {
-        App.database.getDao().deleteNote(noteModel)
-        Toast.makeText(requireContext(), "Сүрөт өчүрүлдү", Toast.LENGTH_SHORT).show()
+        Application.database.getDao().deleteNote(noteModel)
+        Toast.makeText(requireContext(), "Фотография удалена", Toast.LENGTH_SHORT).show()
         loadNotes()
     }
 
@@ -33,7 +33,7 @@ class NoteFragment : BaseFragment<FragmentNoteBinding>(FragmentNoteBinding::infl
     }
 
     private fun loadNotes() {
-        val noteList = App.database.getDao().getAllNotes()
+        val noteList = Application.database.getDao().getAllNotes()
         adapter.setNote(noteList)
     }
 }

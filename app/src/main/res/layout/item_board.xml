@@ -10,21 +10,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        app:constraint_referenced_ids="imageView_item_board,title_item_board,description_item_board,button_item_board" />
+        app:constraint_referenced_ids="lottieAnimation,title_item_board,description_item_board,button_item_board" />
 
-    <ImageView
-        android:id="@+id/imageView_item_board"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieAnimation"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:src="@mipmap/ic_launcher_round"
-        tools:ignore="ContentDescription" />
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true" />
 
     <TextView
         android:id="@+id/title_item_board"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/italic"
-        android:text="@string/title" />
+        android:fontFamily="@font/italic" />
 
     <TextView
         android:id="@+id/description_item_board"
@@ -32,7 +31,6 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="10dp"
         android:fontFamily="@font/italic"
-        android:text="@string/description"
         android:textSize="15sp" />
 
     <Button
@@ -41,7 +39,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/button_shape"
         android:fontFamily="@font/italic"
-        android:text="Кеттик"
+        android:text="Вперед"
         android:visibility="invisible"
         tools:ignore="HardcodedText" />
 </androidx.constraintlayout.widget.ConstraintLayout>

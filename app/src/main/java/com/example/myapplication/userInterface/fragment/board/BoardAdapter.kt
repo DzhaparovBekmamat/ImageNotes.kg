@@ -13,9 +13,13 @@ import com.example.myapplication.databinding.ItemBoardBinding
 class BoardAdapter(private val listener: OpenListener) :
     RecyclerView.Adapter<BoardAdapter.BoardViewHolder>() {
     private val imageList =
-        listOf(R.drawable.notebookkkkk, R.drawable.notebookkkk, R.drawable.notebookkk)
-    private val titleList = listOf("Совет №1", "Совет №2", "Совет №3")
-    private val descriptionList = listOf("В этой жизни не важно, как ты падаешь. Важно, как ты поднимаешься.", "Для достижения счастья необходимы три слагаемых: мечта, вера в себя и трудолюбие.", "Люди не умеют жить. Их этому не учат.")
+        listOf(R.raw.life, R.raw.man, R.raw.yoga)
+    private val titleList = listOf("№1", "№2", "№3")
+    private val descriptionList = listOf(
+        "Удобно записывать свои идеи",
+        "Создавать контрольные списки и зарисовки",
+        "Помогает запомнить события."
+    )
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = BoardViewHolder(
         ItemBoardBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -30,7 +34,7 @@ class BoardAdapter(private val listener: OpenListener) :
     inner class BoardViewHolder(private val binding: ItemBoardBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun onBind(position: Int) {
-            binding.imageViewItemBoard.setImageResource(imageList[position])
+            binding.lottieAnimation.setAnimation(imageList[position])
             binding.titleItemBoard.text = titleList[position]
             binding.descriptionItemBoard.text = descriptionList[position]
             binding.buttonItemBoard.setOnClickListener {
