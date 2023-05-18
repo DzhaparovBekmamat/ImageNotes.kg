@@ -28,22 +28,26 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.main_activity_fragment) as NavHostFragment
         controller = navHostFragment.navController
-        if (!Application.prefs.isBoardShow()) {
+        if (Application.prefs.isBoardShow()) {
+            controller.navigate(R.id.addNoteFragment)
+        } else {
+            Application.prefs.saveBoardState()
             controller.navigate(R.id.onBoardFragment)
+        }
 
-            controller.addOnDestinationChangedListener { _, destination, _ ->
-                if (destination.id == R.id.onBoardFragment || destination.id == R.id.noteFragment) {
-                    binding.bottomNavigation.visibility = View.GONE
-                } else {
-                    binding.bottomNavigation.visibility = View.VISIBLE
-                }
+        controller.addOnDestinationChangedListener { _, destination, _ ->
+            if (destination.id == R.id.onBoardFragment || destination.id == R.id.noteFragment) {
+                binding.bottomNavigation.visibility = View.GONE
+            } else {
+                binding.bottomNavigation.visibility = View.VISIBLE
             }
         }
+
         binding.bottomNavigation.setOnNavigationItemSelectedListener {
             when (it.itemId) {
-                R.id.addNoteFragment_menu -> replaceFragment(addNoteFragment)
-                R.id.contactFragment_menu -> replaceFragment(contactsFragment)
-                R.id.profileFragment_menu -> replaceFragment(profileFragment)
+                R.id.addNoteFragment -> replaceFragment(addNoteFragment)
+                R.id.contactsFragment -> replaceFragment(contactsFragment)
+                R.id.profileFragment -> replaceFragment(profileFragment)
             }
             true
         }

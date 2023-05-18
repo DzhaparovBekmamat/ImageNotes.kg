@@ -1,5 +1,9 @@
 package com.example.myapplication.userInterface.fragment.bottomNavigation
 
-import androidx.fragment.app.Fragment
+import com.example.myapplication.base.BaseFragment
+import com.example.myapplication.databinding.FragmentContactsBinding
 
-class ContactsFragment : Fragment()
+class ContactsFragment : BaseFragment<FragmentContactsBinding>(FragmentContactsBinding::inflate) {
+    override fun setUpUI() {
+    }
+}

@@ -12,13 +12,12 @@ import com.example.myapplication.databinding.ItemBoardBinding
  */
 class BoardAdapter(private val listener: OpenListener) :
     RecyclerView.Adapter<BoardAdapter.BoardViewHolder>() {
-    private val imageList =
-        listOf(R.raw.life, R.raw.man, R.raw.yoga)
+    private val imageList = listOf(R.raw.life, R.raw.man, R.raw.yoga)
     private val titleList = listOf("№1", "№2", "№3")
     private val descriptionList = listOf(
         "Удобно записывать свои идеи",
         "Создавать контрольные списки и зарисовки",
-        "Помогает запомнить события."
+        "Помогает запомнить события"
     )
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = BoardViewHolder(
