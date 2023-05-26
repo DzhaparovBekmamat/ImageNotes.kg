@@ -1,10 +1,7 @@
 package com.example.myapplication.dataBase.dao
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
-import com.example.myapplication.data.model.NoteModel
+import androidx.room.*
+import com.example.myapplication.model.NoteModel
 
 /**
  * Author: Dzhaparov Bekmamat
@@ -20,4 +17,7 @@ interface NoteDao {
 
     @Delete
     fun deleteNote(model: NoteModel)
+
+    @Update
+    fun update(model: NoteModel)
 }

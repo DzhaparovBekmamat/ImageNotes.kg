@@ -5,6 +5,6 @@
         android:width="2dp"
         android:color="@color/white" />
     <gradient
-        android:endColor="#FADB8B"
-        android:startColor="#FADB8B" />
+        android:endColor="#C8A98F"
+        android:startColor="#C8A98F" />
 </shape>

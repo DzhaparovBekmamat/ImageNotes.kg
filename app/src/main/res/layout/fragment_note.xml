@@ -7,34 +7,6 @@
     android:background="#F5F5DC"
     tools:context=".userInterface.fragment.note.NoteFragment">
 
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_result"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="15dp"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_view_add_note_fragment"
-        app:spanCount="3"
-        tools:listitem="@layout/note_list" />
-
-    <TextView
-        android:id="@+id/text_view_add_note_fragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:fontFamily="@font/italic"
-        android:text="Выбранные фотографии"
-        android:textColor="@color/brown"
-        android:textSize="15sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="HardcodedText" />
-
     <Button
         android:id="@+id/button_fragment_note"
         android:layout_width="50dp"
@@ -43,5 +15,51 @@
         android:background="@drawable/left"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/title_note_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:background="@drawable/edit_text_shape"
+        android:drawableStart="@drawable/title"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/italic"
+        android:hint="Название"
+        android:padding="10dp"
+        android:textColor="@color/brown"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/description_note_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/edit_text_shape"
+        android:drawableStart="@drawable/description"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/italic"
+        android:hint="Описание"
+        android:inputType="textMultiLine"
+        android:padding="10dp"
+        android:textColor="@color/brown"
+        app:layout_constraintTop_toBottomOf="@id/title_note_fragment" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_note_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/button_shape_note"
+        android:fontFamily="@font/italic"
+        android:text="Добавить"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/description_note_fragment" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

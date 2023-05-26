@@ -1,4 +1,4 @@
-package com.example.myapplication.userInterface.fragment.bottomNavigation
+package com.example.myapplication.userInterface.fragment.contacts
 
 import com.example.myapplication.base.BaseFragment
 import com.example.myapplication.databinding.FragmentContactsBinding

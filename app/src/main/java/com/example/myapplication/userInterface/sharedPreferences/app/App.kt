@@ -9,11 +9,10 @@ import com.example.myapplication.userInterface.sharedPreferences.utils.Preferenc
 /**
  * Author: Dzhaparov Bekmamat
  */
-class Application : Application() {
+class App : Application() {
     companion object {
         lateinit var prefs: Preferences
         lateinit var database: NoteDatabase
-
     }
 
     override fun onCreate() {
@@ -23,6 +22,6 @@ class Application : Application() {
         prefs = Preferences(preferences)
         database = Room.databaseBuilder(
             this, NoteDatabase::class.java, "database"
-        ).allowMainThreadQueries().build()
+        ).fallbackToDestructiveMigration().allowMainThreadQueries().build()
     }
 }

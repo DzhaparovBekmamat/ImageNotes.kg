@@ -13,6 +13,10 @@
         android:title="Контакты" />
 
     <item
+        android:id="@+id/fireStoreFragment"
+        android:icon="@drawable/store"
+        android:title="FireStore" />
+    <item
         android:id="@+id/profileFragment"
         android:icon="@drawable/person"
         android:title="Профиль" />

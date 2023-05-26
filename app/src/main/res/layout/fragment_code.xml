@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5DC"
+    tools:context=".userInterface.fragment.registration.PhoneFragment">
+
+
+    <EditText
+        android:id="@+id/ed_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:background="@drawable/edit_text_shape"
+        android:drawableStart="@drawable/message"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/italic"
+        android:hint="Введите код"
+        android:padding="10dp"
+        android:textColor="@color/brown"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_check"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/button_shape_note"
+        android:fontFamily="@font/italic"
+        android:text="Проверить"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/ed_code" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

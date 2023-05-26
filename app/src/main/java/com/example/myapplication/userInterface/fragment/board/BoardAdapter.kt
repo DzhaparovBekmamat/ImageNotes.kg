@@ -36,9 +36,11 @@ class BoardAdapter(private val listener: OpenListener) :
             binding.lottieAnimation.setAnimation(imageList[position])
             binding.titleItemBoard.text = titleList[position]
             binding.descriptionItemBoard.text = descriptionList[position]
+
             binding.buttonItemBoard.setOnClickListener {
                 listener.open()
             }
+
             if (position == imageList.size - 1) {
                 binding.buttonItemBoard.visibility = View.VISIBLE
             } else {

@@ -16,20 +16,15 @@
         app:layout_constraintBottom_toTopOf="@id/worm_dots_indicator"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+    <com.google.android.material.tabs.TabLayout
         android:id="@+id/worm_dots_indicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        app:dotsColor="#E4D0AA"
-        app:dotsCornerRadius="8dp"
-        app:dotsSize="16dp"
-        app:dotsSpacing="4dp"
-        app:dotsStrokeWidth="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:tabIndicatorHeight="0dp" />
 
     <Button
         android:id="@+id/skip_button"

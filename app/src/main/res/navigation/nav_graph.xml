@@ -22,12 +22,32 @@
         tools:layout="@layout/fragment_on_board" />
     <fragment
         android:id="@+id/contactsFragment"
-        android:name="com.example.myapplication.userInterface.fragment.bottomNavigation.ContactsFragment"
+        android:name="com.example.myapplication.userInterface.fragment.contacts.ContactsFragment"
         android:label="fragment_contacts"
         tools:layout="@layout/fragment_contacts" />
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.myapplication.userInterface.fragment.bottomNavigation.ProfileFragment"
+        android:name="com.example.myapplication.userInterface.fragment.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.myapplication.userInterface.fragment.identify.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/phoneFragment"
+        android:name="com.example.myapplication.userInterface.fragment.registration.PhoneFragment"
+        android:label="fragment_phone"
+        tools:layout="@layout/fragment_phone" />
+    <fragment
+        android:id="@+id/codeFragment"
+        android:name="com.example.myapplication.userInterface.fragment.registration.CodeFragment"
+        android:label="fragment_code"
+        tools:layout="@layout/fragment_code" />
+    <fragment
+        android:id="@+id/fireStoreFragment"
+        android:name="com.example.myapplication.userInterface.fragment.fireStore.FireStoreFragment"
+        android:label="fragment_fire_store"
+        tools:layout="@layout/fragment_fire_store" />
 </navigation>
