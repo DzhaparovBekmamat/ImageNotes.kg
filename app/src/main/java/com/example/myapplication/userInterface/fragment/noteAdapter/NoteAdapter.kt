@@ -22,6 +22,22 @@ class NoteAdapter(
         notifyDataSetChanged()
     }
 
+    fun getNoteList(): List<NoteModel> {
+        return list
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    private fun sortNotesAlphabetically() {
+        list.sortBy { it.title }
+        notifyDataSetChanged()
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    private fun sortNotesByDate() {
+        list.sortByDescending { it.date }
+        notifyDataSetChanged()
+    }
+
     inner class NoteViewHolder(val binding: NoteListBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun onBind(position: Int) {

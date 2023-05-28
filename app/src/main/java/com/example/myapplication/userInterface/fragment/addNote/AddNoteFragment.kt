@@ -3,7 +3,6 @@ package com.example.myapplication.userInterface.fragment.addNote
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Build
-import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.navigation.fragment.findNavController
 import com.example.myapplication.R
@@ -21,7 +20,36 @@ class AddNoteFragment : BaseFragment<FragmentAddNoteBinding>(FragmentAddNoteBind
         val model = App.database.getDao().getAllNotes()
         adapter.addNote(model as ArrayList<NoteModel>)
         binding.recyclerView.adapter = adapter
+        binding.buttonSort.setOnClickListener {
+            showSortDialog()
+        }
     }
+
+    private fun showSortDialog() {
+        val sortOptions = arrayOf("По алфавиту", "По дате")
+        val dialog = AlertDialog.Builder(requireContext())
+            .setTitle("Выберите сортировку")
+            .setItems(sortOptions) { _, which ->
+                when (which) {
+                    0 -> sortNotesAlphabetically()
+                    1 -> sortNotesByDate()
+                }
+            }
+            .setNegativeButton("Отмена", null)
+            .create()
+        dialog.show()
+    }
+
+    private fun sortNotesAlphabetically() {
+        val sortedNotes = adapter.getNoteList().sortedBy { it.title }
+        adapter.addNote(sortedNotes)
+    }
+
+    private fun sortNotesByDate() {
+        val sortedNotes = adapter.getNoteList().sortedByDescending { it.date }
+        adapter.addNote(sortedNotes)
+    }
+
 
     override fun setUpObserver() {
         binding.buttonNext.setOnClickListener {
