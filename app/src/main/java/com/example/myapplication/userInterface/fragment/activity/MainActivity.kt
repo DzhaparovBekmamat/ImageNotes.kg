@@ -40,7 +40,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         initBottomView()
-        listView = findViewById(R.id.listView)
     }
 
     private fun initBottomView() {

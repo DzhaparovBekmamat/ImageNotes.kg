@@ -1,7 +1,9 @@
 package com.example.myapplication.userInterface.fragment.addNote
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Build
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.navigation.fragment.findNavController
 import com.example.myapplication.R
@@ -33,9 +35,17 @@ class AddNoteFragment : BaseFragment<FragmentAddNoteBinding>(FragmentAddNoteBind
 
 
     private fun listener(model: NoteModel) {
-        App.database.getDao().deleteNote(model)
-        val model = App.database.getDao().getAllNotes()
-        adapter.addNote(model as ArrayList<NoteModel>)
+        val alertDialog = AlertDialog.Builder(requireContext())
+        alertDialog.setTitle("Удаление заметки")
+        alertDialog.setMessage("Вы уверены, что хотите удалить эту заметку?")
+        alertDialog.setPositiveButton("Да") { _, _ ->
+            App.database.getDao().deleteNote(model)
+            val notes = App.database.getDao().getAllNotes() as ArrayList<NoteModel>
+            adapter.addNote(notes)
+        }
+        alertDialog.setNegativeButton("Нет") { _, _ ->
+        }
+        alertDialog.show()
     }
 
     @RequiresApi(Build.VERSION_CODES.R)
