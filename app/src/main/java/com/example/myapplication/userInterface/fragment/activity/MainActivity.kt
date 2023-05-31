@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.main_activity_fragment) as NavHostFragment
         controller = navHostFragment.navController
@@ -32,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         controller.addOnDestinationChangedListener { _, destination, _ ->
-            if (destination.id == R.id.onBoardFragment || destination.id == R.id.noteFragment || destination.id == R.id.phoneFragment) {
+            if (destination.id == R.id.onBoardFragment || destination.id == R.id.noteFragment || destination.id == R.id.phoneFragment || destination.id == R.id.codeFragment) {
                 binding.bottomNavigation.visibility = View.GONE
             } else {
                 binding.bottomNavigation.visibility = View.VISIBLE

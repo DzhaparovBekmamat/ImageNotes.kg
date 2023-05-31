@@ -15,8 +15,157 @@
         android:fontFamily="@font/italic"
         android:text="Личная информация"
         android:textColor="@color/brown"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <ImageView
+        android:id="@+id/image_view_profile"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/chelovek"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView_fire_store"
+        android:contentDescription="TODO"
+        tools:ignore="ContentDescription,HardcodedText" />
+
+    <TextView
+        android:id="@+id/example_name_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:drawablePadding="6dp"
+        android:fontFamily="@font/italic"
+        android:text="Имя :"
+        android:textColor="@color/brown"
+        android:textSize="14sp"
+        app:drawableStartCompat="@drawable/person_identity"
+        app:layout_constraintLeft_toLeftOf="@id/image_view_profile"
+        app:layout_constraintTop_toBottomOf="@id/image_view_profile"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/example_surname_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:drawablePadding="6dp"
+        android:fontFamily="@font/italic"
+        android:text="Фамилия :"
+        android:textColor="@color/brown"
+        android:textSize="14sp"
+        app:drawableStartCompat="@drawable/family"
+        app:layout_constraintLeft_toLeftOf="@id/image_view_profile"
+        app:layout_constraintTop_toBottomOf="@id/example_name_profile"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/name_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/edit_text_shape"
+        android:fontFamily="@font/italic"
+        android:padding="8dp"
+        android:text="Бекмамат"
+        android:textColor="@color/brown"
+        android:textSize="16sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/example_name_profile"
+        app:layout_constraintLeft_toRightOf="@id/example_name_profile"
+        app:layout_constraintTop_toBottomOf="@id/image_view_profile"
+        tools:ignore="HardcodedText,RtlHardcoded" />
+
+    <TextView
+        android:id="@+id/surname_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/edit_text_shape"
+        android:fontFamily="@font/italic"
+        android:padding="8dp"
+        android:text="Джапаров"
+        android:textColor="@color/brown"
+        android:textSize="16sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/example_surname_profile"
+        app:layout_constraintLeft_toRightOf="@id/example_surname_profile"
+        app:layout_constraintTop_toBottomOf="@id/image_view_profile"
+        tools:ignore="HardcodedText,RtlHardcoded" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/log_out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/button_shape"
+        android:drawableStart="@drawable/exit"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/italic"
+        android:padding="10dp"
+        android:text="Выйти"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/example_phone_number_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:drawablePadding="6dp"
+        android:fontFamily="@font/italic"
+        android:text="Номер :"
+        android:textColor="@color/brown"
+        android:textSize="14sp"
+        app:drawableStartCompat="@drawable/contact_phone"
+        app:layout_constraintLeft_toLeftOf="@id/image_view_profile"
+        app:layout_constraintTop_toBottomOf="@id/example_surname_profile"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/phone_number_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/edit_text_shape"
+        android:fontFamily="@font/italic"
+        android:inputType="phone"
+        android:padding="8dp"
+        android:text="+996554746002"
+        android:textColor="@color/brown"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/example_phone_number_profile"
+        app:layout_constraintLeft_toRightOf="@id/example_phone_number_profile"
+        app:layout_constraintTop_toBottomOf="@id/image_view_profile"
+        tools:ignore="HardcodedText,RtlHardcoded,TextViewEdits" />
+
+    <TextView
+        android:id="@+id/example_married_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:drawablePadding="6dp"
+        android:fontFamily="@font/italic"
+        android:text="Сем.положение :"
+        android:textColor="@color/brown"
+        android:textSize="14sp"
+        app:drawableStartCompat="@drawable/love"
+        app:layout_constraintLeft_toLeftOf="@id/image_view_profile"
+        app:layout_constraintTop_toBottomOf="@id/example_phone_number_profile"
+        tools:ignore="HardcodedText" />
+
+    <Switch
+        android:id="@+id/switch_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        app:layout_constraintBaseline_toBaselineOf="@id/example_married_profile"
+        app:layout_constraintLeft_toRightOf="@id/example_married_profile"
+        app:layout_constraintTop_toBottomOf="@id/example_phone_number_profile"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
 </androidx.constraintlayout.widget.ConstraintLayout>

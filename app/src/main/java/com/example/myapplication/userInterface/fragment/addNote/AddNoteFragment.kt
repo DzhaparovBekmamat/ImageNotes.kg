@@ -14,7 +14,7 @@ import com.example.myapplication.userInterface.sharedPreferences.app.App
 
 @RequiresApi(Build.VERSION_CODES.R)
 class AddNoteFragment : BaseFragment<FragmentAddNoteBinding>(FragmentAddNoteBinding::inflate) {
-    private val adapter: NoteAdapter by lazy { NoteAdapter(this::listener, this::share) }
+    private val adapter: NoteAdapter by lazy { NoteAdapter(this::delete, this::share) }
 
     override fun setUpUI() {
         val model = App.database.getDao().getAllNotes()
@@ -27,16 +27,13 @@ class AddNoteFragment : BaseFragment<FragmentAddNoteBinding>(FragmentAddNoteBind
 
     private fun showSortDialog() {
         val sortOptions = arrayOf("По алфавиту", "По дате")
-        val dialog = AlertDialog.Builder(requireContext())
-            .setTitle("Выберите сортировку")
+        val dialog = AlertDialog.Builder(requireContext()).setTitle("Выберите сортировку")
             .setItems(sortOptions) { _, which ->
                 when (which) {
                     0 -> sortNotesAlphabetically()
                     1 -> sortNotesByDate()
                 }
-            }
-            .setNegativeButton("Отмена", null)
-            .create()
+            }.setNegativeButton("Отмена", null).create()
         dialog.show()
     }
 
@@ -50,7 +47,6 @@ class AddNoteFragment : BaseFragment<FragmentAddNoteBinding>(FragmentAddNoteBind
         adapter.addNote(sortedNotes)
     }
 
-
     override fun setUpObserver() {
         binding.buttonNext.setOnClickListener {
             findNavController().navigate(R.id.noteFragment)
@@ -62,7 +58,7 @@ class AddNoteFragment : BaseFragment<FragmentAddNoteBinding>(FragmentAddNoteBind
     }
 
 
-    private fun listener(model: NoteModel) {
+    private fun delete(model: NoteModel) {
         val alertDialog = AlertDialog.Builder(requireContext())
         alertDialog.setTitle("Удаление заметки")
         alertDialog.setMessage("Вы уверены, что хотите удалить эту заметку?")

@@ -1,48 +1,63 @@
 package com.example.myapplication.userInterface.sharedPreferences.utils
 
+import android.content.Context
 import android.content.SharedPreferences
 
-/**
- * Author: Dzhaparov Bekmamat
- */
 class Preferences(private val preferences: SharedPreferences) {
+    companion object {
+        private const val PREFERENCES_NAME = "MyPreferences"
+        private const val PHONE_NUMBER_KEY = "phone_number"
+        private const val NAME_KEY = "name"
+        private const val LAST_NAME_KEY = "last_name"
+        private const val PHOTO_KEY = "photo"
+
+        fun saveUserData(
+            context: Context,
+            phoneNumber: String,
+            name: String,
+            lastName: String,
+            photo: String
+        ) {
+            val preferences = context.getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE)
+            preferences.edit().apply {
+                putString(PHONE_NUMBER_KEY, phoneNumber)
+                putString(LAST_NAME_KEY, lastName)
+                putString(NAME_KEY, name)
+                putString(PHOTO_KEY, photo)
+            }.apply()
+        }
+
+        fun getUserPhoneNumber(context: Context): String? {
+            val preferences = context.getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE)
+            return preferences.getString(PHONE_NUMBER_KEY, "")
+        }
+
+        fun getUserName(context: Context): String? {
+            val preferences = context.getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE)
+            return preferences.getString(NAME_KEY, "")
+        }
+
+        fun getUserLastName(context: Context): String? {
+            val preferences = context.getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE)
+            return preferences.getString(LAST_NAME_KEY, "")
+        }
+
+        fun getUserPhoto(context: Context): String? {
+            val preferences = context.getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE)
+            return preferences.getString(PHOTO_KEY, "")
+        }
+
+        fun clearUserData(context: Context) {
+            val preferences = context.getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE)
+            preferences.edit().clear().apply()
+        }
+    }
+
     fun saveBoardState() {
         preferences.edit().putBoolean("isShow", true).apply()
     }
 
     fun isBoardShow(): Boolean {
         return preferences.getBoolean("isShow", false)
-    }
-
-    fun saveUserName(name: String) {
-        preferences.edit().putString("name", name).apply()
-    }
-
-    fun getUserName(): String {
-        return preferences.getString("name", "Unknown")!!
-    }
-
-    fun saveUserSurname(surname: String) {
-        preferences.edit().putString("surname", surname).apply()
-    }
-
-    fun getUserSurname(): String {
-        return preferences.getString("surname", "Unknown")!!
-    }
-
-    fun savePhoneNumber(phone: Int) {
-        preferences.edit().putInt("phone", phone).apply()
-    }
-
-    fun getPhoneNumber(): Int {
-        return preferences.getInt("phone", 996554746002.toInt())
-    }
-
-    fun saveMarried() {
-        preferences.edit().putBoolean("isMarried", true).apply()
-    }
-
-    fun getMarried(): Boolean {
-        return preferences.getBoolean("isMarried", false)
     }
 }

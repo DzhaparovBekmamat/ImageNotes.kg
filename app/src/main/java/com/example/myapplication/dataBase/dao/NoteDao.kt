@@ -8,7 +8,6 @@ import com.example.myapplication.model.NoteModel
  */
 @Dao
 interface NoteDao {
-
     @Query("SELECT * FROM NoteModel")
     fun getAllNotes(): List<NoteModel>
 

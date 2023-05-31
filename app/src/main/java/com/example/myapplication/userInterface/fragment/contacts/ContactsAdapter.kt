@@ -11,10 +11,8 @@ import com.example.myapplication.databinding.NoteContactsBinding
  * Author: Dzhaparov Bekmamat
  */
 class ContactsAdapter(
-    private val call: (number: String) -> Unit,
-    private val chat: (number: String) -> Unit
-) :
-    ListAdapter<ContactsModel, ContactsAdapter.ContactViewHolder>(ContactDiffUtil()) {
+    private val call: (number: String) -> Unit, private val chat: (number: String) -> Unit
+) : ListAdapter<ContactsModel, ContactsAdapter.ContactViewHolder>(ContactDiffUtil()) {
     class ContactDiffUtil : DiffUtil.ItemCallback<ContactsModel>() {
         override fun areItemsTheSame(oldItem: ContactsModel, newItem: ContactsModel): Boolean {
             return oldItem == newItem

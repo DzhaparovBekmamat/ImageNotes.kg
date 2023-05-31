@@ -9,15 +9,14 @@ import com.google.android.material.tabs.TabLayoutMediator
 @Suppress("DEPRECATION")
 class OnBoardFragment : BaseFragment<FragmentOnBoardBinding>(FragmentOnBoardBinding::inflate),
     BoardAdapter.OpenListener {
-
     private lateinit var adapter: BoardAdapter
+
     override fun setUpUI() {
         adapter = BoardAdapter(this)
         binding.viewPager.adapter = adapter
         TabLayoutMediator(binding.wormDotsIndicator, binding.viewPager) { tab, _ ->
             tab.setIcon(R.drawable.tab_indicator)
         }.attach()
-
         binding.skipButton.setOnClickListener {
             val currentItem = binding.viewPager.currentItem
             binding.viewPager.setCurrentItem(currentItem + 2, true)

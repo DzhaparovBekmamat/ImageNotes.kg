@@ -7,7 +7,6 @@
     android:background="#F5F5DC"
     tools:context=".userInterface.fragment.registration.PhoneFragment">
 
-
     <EditText
         android:id="@+id/ed_code"
         android:layout_width="match_parent"

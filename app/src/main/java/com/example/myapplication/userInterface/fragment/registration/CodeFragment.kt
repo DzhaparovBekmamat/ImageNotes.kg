@@ -9,7 +9,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthProvider
 
 class CodeFragment : BaseFragment<FragmentCodeBinding>(FragmentCodeBinding::inflate) {
-
     private lateinit var mAuth: FirebaseAuth
 
     override fun setUpUI() {

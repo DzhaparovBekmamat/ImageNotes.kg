@@ -2,7 +2,6 @@ package com.example.myapplication.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import java.io.Serializable
 
 /**
  * Author: Dzhaparov Bekmamat
@@ -14,4 +13,4 @@ data class NoteModel(
     var title: String?,
     var description: String?,
     var date: String?
-) : Serializable
+)

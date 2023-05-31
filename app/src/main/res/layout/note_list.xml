@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#F5F5DC">
@@ -14,7 +15,8 @@
         android:text="Title"
         android:textColor="@color/brown"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/description_note_list"
@@ -25,7 +27,8 @@
         android:text="Description"
         android:textColor="@color/brown"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title_note_list" />
+        app:layout_constraintTop_toBottomOf="@id/title_note_list"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/date_note_list"
@@ -39,7 +42,8 @@
         android:textColor="@color/brown"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/description_note_list" />
+        app:layout_constraintTop_toBottomOf="@id/description_note_list"
+        tools:ignore="HardcodedText" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_remove"

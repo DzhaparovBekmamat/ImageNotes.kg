@@ -11,7 +11,7 @@ import com.example.myapplication.databinding.NoteListBinding
  * Author: Dzhaparov Bekmamat
  */
 class NoteAdapter(
-    private val listener: (model: NoteModel) -> Unit, private val share: (pos: Int) -> Unit
+    private val delete: (model: NoteModel) -> Unit, private val share: (pos: Int) -> Unit
 ) : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
     private val list: MutableList<NoteModel> = ArrayList()
 
@@ -58,7 +58,7 @@ class NoteAdapter(
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
         holder.onBind(position)
         holder.binding.buttonRemove.setOnClickListener {
-            listener(list[position])
+            delete(list[position])
         }
 
         holder.binding.buttonShare.setOnClickListener {

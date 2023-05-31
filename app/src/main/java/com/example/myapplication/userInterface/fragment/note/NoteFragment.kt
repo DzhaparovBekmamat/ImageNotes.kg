@@ -60,14 +60,12 @@ class NoteFragment : BaseFragment<FragmentNoteBinding>(FragmentNoteBinding::infl
         }
     }
 
-
     @RequiresApi(Build.VERSION_CODES.O)
     private fun saveRoom() {
         val titleString = binding.titleNoteFragment.text.toString()
         val descriptionString = binding.descriptionNoteFragment.text.toString()
         val formatter = DateTimeFormatter.ofPattern("hh:mm | dd-mm-yyyy")
         val current = LocalDateTime.now().format(formatter)
-
         if (titleString.isEmpty() || descriptionString.isEmpty()) {
             findNavController().navigateUp()
         } else {

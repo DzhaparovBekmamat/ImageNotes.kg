@@ -1,7 +1,5 @@
 package com.example.myapplication.userInterface.fragment.contacts
 
-import android.graphics.Bitmap
-
 /**
  * Author: Dzhaparov Bekmamat
  */

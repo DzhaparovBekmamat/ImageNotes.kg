@@ -10,12 +10,10 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 class FireStoreFragment :
     BaseFragment<FragmentFireStoreBinding>(FragmentFireStoreBinding::inflate) {
-
     private lateinit var firestore: FirebaseFirestore
     private val adapter: NoteStoreAdapter by lazy {
         NoteStoreAdapter()
     }
-
 
     override fun setUpUI() {
         firestore = FirebaseFirestore.getInstance()
@@ -33,5 +31,4 @@ class FireStoreFragment :
         }
         binding.recyclerView.adapter = adapter
     }
-
 }

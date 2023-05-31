@@ -17,13 +17,69 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/add_photo_registration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/button_shape"
+        android:drawableStart="@drawable/add_photo"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/italic"
+        android:padding="10dp"
+        android:text="Добавить фото"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/ed_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <EditText
+        android:id="@+id/ed_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/edit_text_shape"
+        android:drawableStart="@drawable/face"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/italic"
+        android:hint="Введите имя"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:textColor="@color/brown"
+        app:layout_constraintBottom_toTopOf="@id/ed_surname"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="Autofill" />
+
+    <EditText
+        android:id="@+id/ed_surname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/edit_text_shape"
+        android:drawableStart="@drawable/rename"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/italic"
+        android:hint="Введите фамилию"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:textColor="@color/brown"
+        app:layout_constraintBottom_toTopOf="@id/ed_phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="Autofill,HardcodedText" />
 
     <EditText
         android:id="@+id/ed_phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="50dp"
+        android:layout_marginHorizontal="40dp"
         android:background="@drawable/edit_text_shape"
         android:drawableStart="@drawable/local_phone"
         android:drawablePadding="10dp"
@@ -35,19 +91,21 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="Autofill,HardcodedText" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_check"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="50dp"
+        android:layout_marginHorizontal="40dp"
         android:layout_marginTop="15dp"
         android:background="@drawable/button_shape_note"
         android:fontFamily="@font/italic"
         android:text="Отправить код"
         android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@id/ed_phone" />
+        app:layout_constraintTop_toBottomOf="@id/ed_phone"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/btn_google"
@@ -69,5 +127,18 @@
         app:layout_constraintBottom_toTopOf="@id/btn_google"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_check" />
+        app:layout_constraintTop_toBottomOf="@id/btn_check"
+        tools:ignore="HardcodedText" />
+
+    <Switch
+        android:id="@+id/switch_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:fontFamily="@font/italic"
+        android:text="Женат / Замужем"
+        app:layout_constraintBottom_toTopOf="@id/add_photo_registration"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="HardcodedText,UseSwitchCompatOrMaterialXml" />
 </androidx.constraintlayout.widget.ConstraintLayout>

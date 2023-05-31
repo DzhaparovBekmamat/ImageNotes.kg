@@ -29,17 +29,44 @@
         android:id="@+id/profileFragment"
         android:name="com.example.myapplication.userInterface.fragment.profile.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
-    <fragment
-        android:id="@+id/registerFragment"
-        android:name="com.example.myapplication.userInterface.fragment.identify.RegisterFragment"
-        android:label="fragment_register"
-        tools:layout="@layout/fragment_register" />
+        tools:layout="@layout/fragment_profile" >
+        <argument
+            android:name="phoneNumber"
+            app:argType="string" />
+        <argument
+            android:name="firstName"
+            app:argType="string" />
+        <argument
+            android:name="lastName"
+            app:argType="string" />
+        <argument
+            android:name="photo"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/phoneFragment"
         android:name="com.example.myapplication.userInterface.fragment.registration.PhoneFragment"
         android:label="fragment_phone"
-        tools:layout="@layout/fragment_phone" />
+        tools:layout="@layout/fragment_phone">
+        <action
+            android:id="@+id/action_phoneFragment_to_profileFragment"
+            app:destination="@id/profileFragment">
+
+            <argument
+                android:name="phoneNumber"
+                app:argType="string" />
+            <argument
+                android:name="firstName"
+                app:argType="string" />
+            <argument
+                android:name="lastName"
+                app:argType="string" />
+            <argument
+                android:name="photo"
+                app:argType="string" />
+
+        </action>
+    </fragment>
     <fragment
         android:id="@+id/codeFragment"
         android:name="com.example.myapplication.userInterface.fragment.registration.CodeFragment"

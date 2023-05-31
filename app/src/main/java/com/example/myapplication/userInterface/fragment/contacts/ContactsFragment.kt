@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
-import android.provider.ContactsContract
 import android.provider.ContactsContract.CommonDataKinds.Phone
 import android.provider.ContactsContract.Contacts
 import android.widget.Toast
@@ -12,6 +11,7 @@ import androidx.core.app.ActivityCompat
 import com.example.myapplication.base.BaseFragment
 import com.example.myapplication.databinding.FragmentContactsBinding
 
+@Suppress("DEPRECATION")
 class ContactsFragment : BaseFragment<FragmentContactsBinding>(FragmentContactsBinding::inflate) {
     private val adapter: ContactsAdapter by lazy { ContactsAdapter(::call, ::chat) }
     private lateinit var phoneNumber: String
@@ -21,7 +21,6 @@ class ContactsFragment : BaseFragment<FragmentContactsBinding>(FragmentContactsB
     }
 
     override fun setUpUI() {
-        Toast.makeText(requireContext(), "Мои контакты", Toast.LENGTH_SHORT).show()
         binding.recyclerViewContacts.adapter = adapter
         if (ActivityCompat.checkSelfPermission(
                 requireContext(), android.Manifest.permission.READ_CONTACTS
@@ -97,6 +96,7 @@ class ContactsFragment : BaseFragment<FragmentContactsBinding>(FragmentContactsB
         ActivityCompat.requestPermissions(requireActivity(), arrayOf(permission), requestCode)
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onRequestPermissionsResult(
         requestCode: Int, permissions: Array<out String>, grantResults: IntArray
     ) {
