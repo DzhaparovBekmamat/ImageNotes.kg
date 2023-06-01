@@ -6,6 +6,8 @@ import android.annotation.SuppressLint
 import android.content.SharedPreferences
 import android.net.Uri
 import android.preference.PreferenceManager
+import androidx.navigation.fragment.findNavController
+import com.example.myapplication.R
 import com.example.myapplication.base.BaseFragment
 import com.example.myapplication.databinding.FragmentProfileBinding
 
@@ -19,6 +21,13 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
         }
         loadData()
         loadPhotoFromSharedPreferences()
+        if (isProfileDataEmpty()) {
+            openPhoneFragment()
+        }
+    }
+
+    private fun openPhoneFragment() {
+        findNavController().navigate(R.id.phoneFragment)
     }
 
     private fun loadPhotoFromSharedPreferences() {
@@ -54,5 +63,14 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
         binding.phoneNumberProfile.text = ""
         binding.switchProfile.isChecked = false
         binding.imageViewProfile.setImageURI(null)
+    }
+
+    private fun isProfileDataEmpty(): Boolean {
+        val name = sharedPreferences.getString("firstName", null)
+        val lastName = sharedPreferences.getString("lastName", null)
+        val phoneNumber = sharedPreferences.getString("phoneNumber", null)
+        val maritalStatus = sharedPreferences.getBoolean("maritalStatus", false)
+        val imageUriString = sharedPreferences.getString("profileImageUri", null)
+        return name.isNullOrEmpty() && lastName.isNullOrEmpty() && phoneNumber.isNullOrEmpty() && !maritalStatus && imageUriString.isNullOrEmpty()
     }
 }

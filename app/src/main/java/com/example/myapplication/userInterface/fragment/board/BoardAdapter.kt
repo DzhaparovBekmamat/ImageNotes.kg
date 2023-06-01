@@ -39,7 +39,6 @@ class BoardAdapter(private val listener: OpenListener) :
             binding.buttonItemBoard.setOnClickListener {
                 listener.open()
             }
-
             if (position == imageList.size - 1) {
                 binding.buttonItemBoard.visibility = View.VISIBLE
             } else {
