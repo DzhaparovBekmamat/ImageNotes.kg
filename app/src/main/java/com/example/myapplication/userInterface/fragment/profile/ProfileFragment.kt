@@ -58,6 +58,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
         editor.remove("maritalStatus")
         editor.remove("profileImageUri")
         editor.apply()
+
         binding.nameProfile.text = ""
         binding.surnameProfile.text = ""
         binding.phoneNumberProfile.text = ""
